@@ -1,1 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تابعني على إنستغرام</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+  
+  body {
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 40px 30px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    animation: fadeIn 0.8s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #833ab4, #fd1d1d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 50px;
+    color: white;
+    border: 4px solid #fff;
+    box-shadow: 0 8px 20px rgba(131,58,180,0.3);
+  }
+  
+  h1 {
+    font-size: 24px;
+    color: #222;
+    margin-bottom: 8px;
+  }
+  
+  .username {
+    color: #833ab4;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .bio {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-size: 15px;
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .stat strong {
+    display: block;
+    font-size: 20px;
+    color: #222;
+  }
+  
+  .stat span {
+    font-size: 13px;
+    color: #888;
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-follow {
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+    color: white;
+    box-shadow: 0 8px 20px rgba(131,58,180,0.4);
+  }
+  
+  .btn-follow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(131,58,180,0.5);
+  }
+  
+  .btn-share {
+    background: #f0f0f0;
+    color: #333;
+  }
+  
+  .btn-share:hover {
+    background: #e0e0e0;
+  }
+  
+  footer {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #aaa;
+  }
+</style>
+</head>
+<body>
 
+  <div class="card">
+    <div class="avatar">📸</div>
+    
+    <h1>اسمك هنا</h1>
+    <p class="username">@username</p>
+    
+    <p class="bio">
+      ✨ محتوى يومي ملهم<br>
+      🎯 نصائح وحلول عملية<br>
+      💬 تفاعل معك شخصياً
+    </p>
+    
+    <div class="stats">
+      <div class="stat"><strong>1K+</strong><span>متابع</span></div>
+      <div class="stat"><strong>500+</strong><span>منشور</span></div>
+      <div class="stat"><strong>10K</strong><span>إعجاب</span></div>
+    </div>
+    
+    <a href="https://instagram.com/username" target="_blank" class="btn btn-follow">
+      🔥 تابعني على إنستغرام
+    </a>
+    
+    <button class="btn btn-share" onclick="sharePage()">
+      📤 شارك الصفحة
+    </button>
+    
+    <footer>© 2025 — جميع الحقوق محفوظة</footer>
+  </div>
+
+<script>
+  function sharePage() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'تابعني على إنستغرام',
+        text: 'صفحتي على إنستغرام — تابعني!',
+        url: window.location.href
+      });
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      alert('تم نسخ الرابط! شاركه مع أصدقائك.');
+    }
+  }
+</script>
+
+</body>
+</html>
